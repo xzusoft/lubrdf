@@ -1,0 +1,22 @@
+/*
+===================
+大功能提示说明
+===================
+*/
+.prompt_text{
+	padding:10px;
+	color:#666;
+	margin-bottom:10px;
+}
+.prompt_text:hover{
+	color:#000;
+}
+.prompt_text ol,
+.prompt_text ul{
+	padding:0 0 5px 2em;
+	margin:0;
+	line-height:1.5;
+}
+.prompt_text ul li{
+	list-style: disc outside;
+}

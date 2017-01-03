@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录 - 阿里智游,全网旅游分销平台 Alizhiyou.com </title>
+    <link rel="icon" href="https://www.alizhiyou.com/static/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.alizhiyou.com/static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="//g.alicdn.com/sui/sui3/0.0.18/css/sui.min.css">
+    <link rel="stylesheet" href="/static/css/crm.css">
+    <script type="text/javascript">
+    	var _global = {$global};
+    </script>
+  </head>
+  <body>
+  <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">有朋CRM </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{:url('index/index/index')}">首页<span class="sr-only">(current)</span></a></li>
+            <li><a href="{:url('index/crm/index');}">客户</a></li>
+        
+          </ul>
+       
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{$uinfo.nickname} <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="{:url('index/login/changepwd')}">更新密码</a></li>
+                <li class="divider"></li>
+                <li><a href="{:url('index/index/logout');}">退出</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+  <div class="container">

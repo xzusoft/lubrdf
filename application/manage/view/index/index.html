@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="renderer" content="webkit">
+<meta name="referrer" content="always">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>{$config.sitename}</title>
+<link rel="icon" href="https://b.yzcdn.cn/v2/image/yz_fc.ico" />
+<meta name="keywords" content="{$config.keywords}" />
+<meta name="description" content="{$config.siteinfo}" />
+<!-- ▼ Common CSS -->
+<link rel="stylesheet" href="{$config.cssjs}/common/css/bootstrap.css" media="screen">
+<link rel="stylesheet" href="{$config.cssjs}/css/pc.css" media="screen">
+<!-- ▲ Common CSS -->
+<!-- ▼ Order list CSS -->
+<link rel="stylesheet" href="https://b.yzcdn.cn/v2/build_css/stylesheets/www/pages/pc/trade/order_8322c1bc3c.css" media="screen">
+<!-- ▲ Order list CSS -->
+<!-- ▼ index CSS -->
+<link rel="stylesheet" href="{$config.cssjs}/css/index.css" media="screen">
+<!-- ▲ index CSS -->
+<script type="text/javascript">
+ var _global = {$global}
+</script>
+<body>
+<!-- ▼ Main sidebar -->
+<aside id="app-sidebar">
+    <div id="app-first-sidebar">
+        <div>
+            <a class="team-logo-wrap" href="//koudaitong.com/v2/setting/store#index">
+                <div class="team-logo" style="background-image: url(https://img.yzcdn.cn/upload_files/shop2.png?imageView2/2/w/60/h/60/q/75/format/webp)">
+                </div>
+            </a>
+            <nav>
+                <ul class="clearfix">
+                    <li>
+                        <a href="//koudaitong.com/v2/dashboard/index">
+                            <i class="sidebar-icon sidebar-icon-dashboard"></i>
+                            概况
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="//koudaitong.com/v2/showcase/dashboard" >
+                            <i class="sidebar-icon sidebar-icon-shop"></i>
+                            店铺
+                        </a>
+                    </li>
+                    <li >
+                        <a href="//koudaitong.com/v2/showcase/goods#list">
+                            <i class="sidebar-icon sidebar-icon-goods"></i>
+                            商品
+                        </a>
+                    </li>
+                    <li >
+                        <a href="//koudaitong.com/v2/trade/dashboard">
+                            <i class="sidebar-icon sidebar-icon-order"></i>
+                            订单
+                        </a>
+                    </li>
+                 
+                    <li style="margin-top: 44px;">
+                        <a href="//koudaitong.com/v2/ump/dashboard">
+                            <i class="sidebar-icon sidebar-icon-app"></i>
+                            营销
+                        </a>
+                    </li>
+                    <li >
+                        <a href="//koudaitong.com/v2/setting/store" >
+                            <i class="sidebar-icon sidebar-icon-setting"></i>
+                            设置
+                        </a>
+                    </li>
+                    <li style="margin-top: 44px;">
+                        <a href="//youzan.com/" target="_blank">
+                            <i class="sidebar-icon sidebar-icon-youzan"></i>
+                            有赞
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!--用户信息 s-->
+    <div id="app-user-info">
+        <span class="user-name">18631451216</span>
+        <span class="user-arrow"></span>
+        <div class="user-dropdown">
+            <div class="user-dropdown-meta">
+                <div>18631451216</div>
+                <div>18631451216</div>
+            </div>
+            <div class="user-dropdown-select">
+                <a class="new-select" href="//koudaitong.com/v2/account/personal/invitecode">个人邀请奖励</a>
+                <a href="//koudaitong.com/v2/account/personal">帐号设置</a>
+                <a href="{$url.login}">登录</a>
+				<a href="{$url.register}">注册</a>
+				<a href="{$url.logout}">退出</a>
+            </div>
+        </div>
+    </div>
+	<!--用户信息 e-->       
+</aside>
+<!-- ▲ Main sidebar -->
+<!-- ▼ Main container -->
+<div id="app-container" class="container">
+    <div id="app-container-top">
+        <div class="dashboard-top-alert zent-alert zent-alert-warning">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p class="warning-text">距离您店铺打烊还剩 20 天，打烊后将影响店铺的正常运营。</p>
+                        </td>
+                        <td rowspan="2" style="min-width: 300px;">
+                            <a class="zent-btn zent-btn-large zent-btn-danger" href="//koudaitong.com/v2/member?type=1">
+                                立即续费                            </a>
+                                                            <a href="https://wap.koudaitong.com/v2/feature/d519gsat" class="zent-btn zent-btn-large zent-btn-danger-outline" target="_blank">领取礼包</a>
+                                                                                </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="hotline">
+                                <a href="//youzan.com/dashboard/index/laoshangjia" class="why-youzan-left warning" target="_blank">为什么选择有赞</a>
+                                官方咨询电话：
+                                                                    <font class="telephone">0571-85225188</font>
+                                                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="app">
+        <div class="app-inner clearfix">
+            <div class="app-init-container">
+            <input type="hidden" name="bad_code_team" value="0">
+<div id="js-page-content" class="page-content">
+
+    <div id="js-page-content-inner">
+        <div class="flex-container shop-basic-info-container">
+            <div class="dashboard-center">
+                <div class="shop-basic-info">
+                    <h2 class="shop-name">
+                        <span>小店家WORK</span>
+                            <i class="shop-badge active">个人 <div class="shop-badge-tip">
+                                <div class="ui-popover top-left">
+                                    <div class="ui-popover-inner">
+                                        店铺已通过个人认证
+                                    </div>
+                                    <div class="arrow"></div>
+                                </div>
+                            </div>
+                        </i>
+                        
+                                                                                                                                                                <i class="shop-badge active">
+                                有赞商家版                                <div class="shop-badge-tip">
+                                    <div class="ui-popover top-left">
+                                                                                <div class="ui-popover-inner">
+                                            已订购有赞商家版，有效期至：2016年10月08日                                            <a href="//koudaitong.com/v2/member?type=2" class="zent-btn zent-btn-danger zent-btn-small">续费</a>
+                                            <div class="hotline">
+                                                官方咨询电话：<font class="telephone">0571-85225188</font>
+                                                <a href="//youzan.com/dashboard/index/laoshangjia" class="why-youzan" target="_blank">为什么选择有赞</a>
+                                            </div>
+                                        </div>
+                                                                                <div class="arrow"></div>
+                                    </div>
+                                </div>
+                            </i>
+                                                                                                                                                                <i class="shop-badge">
+                                VIP                                <div class="shop-badge-tip">
+                                    <div class="ui-popover top-left">
+                                                                                                                                <div class="ui-popover-inner">
+                                                立即开通有赞VIP会员，享受会员特权
+                                                <a href="https://vip.youzan.com" ,="" target="_blank" class="zent-btn zent-btn-danger-outline zent-btn-small">查看权益</a>
+                                                <a href="//koudaitong.com/v2/member" class="zent-btn zent-btn-danger zent-btn-small">立即开通</a>
+                                            </div>
+                                                                                                 </div>
+                                    </div>
+                                </div>
+                            </i>
+                                                                        </h2>
+                                            <span class="expiry-date">
+                            商家版有效期至：2016年10月08日                        </span>
+                                    </div>
+            </div>
+            <div class="dashboard-right">
+                <div class="contact-waiter">
+                    <a href="http://bbs.youzan.com/forum.php?gid=57" target="_blank" class="">
+                        <i class="ico-contact-waiter"></i><span>联系客服</span>
+                    </a>
+                    <a href="//fuwu.youzan.com/" target="_blank" class="js-show-glod-provider">
+                        <i class="ico-contact-partner"></i><span>联系到店服务</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="dashboard-center">
+                                <div class="js-new-task new-task" style="display: block;">
+<div class="widget-box widget-box-task">
+    <div class="widget-box-header">
+        <h3 class="widget-box-title">
+            新手任务
+            <div class="widget-box-opts">
+                <a target="_blank" href="//koudaitong.com/v2/task/team">更多任务</a>
+            </div>
+        </h3>
+    </div>
+    <div class="widget-box-content">
+        
+        <div class="task-info task-flashing">
+            <h4 class="task-title">绑定微信公众号</h4>
+            <p class="task-detail">绑定微信公众号，可以在有赞后台管理您的公众号，将店铺拓展到微信上。如果您是“认证订阅号”或“认证服务号”，还可以直接在有赞后台和粉丝进行实时会话，更可以开启高级的“客户”管理模块。点击右侧“任务教程”进行设置吧。</p>
+            <p class="reward">奖励： <em>+30</em> 有赞币</p>
+            <div class="task-opts">
+                
+                <a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=8131&amp;highlight=%E4%B8%80%E9%94%AE%E6%8E%88%E6%9D%83" target="_blank" class="zent-btn">查看教程</a>
+                
+                
+                    <button class="zent-btn zent-btn-primary zent-btn-disabled" disabled="">领取奖励</button>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+</div>
+                <div id="js-overview" class="widget-box-overview js-overview-overview">
+                    <ul>
+                        <li>
+                            <h5>
+                                <a href="//koudaitong.com/v2/trade/order#list&amp;type=all&amp;state=tosend&amp;time_type=pay_time">
+                                    <span class="" data-bind="wait_ship_order">0</span>
+                                </a>
+                            </h5>
+                            <h6 class="info-description">待发货订单</h6>
+                        </li>
+                        <li>
+                            <h5>
+                                <a href="//koudaitong.com/v2/trade/order#list&amp;type=feedback&amp;state=all&amp;time_type=feedback_time">
+                                    <span class="" data-bind="safeguard_order">0</span>
+                                </a>
+                            </h5>
+                            <h6 class="info-description">维权订单</h6>
+                        </li>
+                                                <li>
+                            <h5>
+                                <a href="//koudaitong.com/v2/trade/order#list&amp;type=all&amp;keyword[start_time]=2016-09-17 00:00:00&amp;keyword[end_time]=2016-09-17 23:59:59">
+                                    <span data-bind="order_count">0</span>
+                                </a>
+                            </h5>
+                            <h6>昨日订单</h6>
+                        </li>
+
+                        <li>
+                            <h5>
+                                <a href="//koudaitong.com/v2/statcenter/order">
+                                    <span data-bind="pay_amount" data-unit="￥"><i class="unit">￥</i>0.00</span>
+                                </a>
+                            </h5>
+                            <h6>昨日交易额</h6>
+                        </li>
+
+                        <li>
+                            <h5>
+                                <a href="//koudaitong.com/v2/trade/newsettlement#income">
+                                    <span data-bind="total_can_withdraw" data-unit="￥"><i class="unit">￥</i>0.00</span>
+                                </a>
+                            </h5>
+                            <h6>可提现余额</h6>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="ui-box widget-box usefull-links">
+                    <div class="widget-box-header">
+                        <h3 class="widget-box-title">
+                            常用功能
+                        </h3>
+                    </div>
+                    <div class="widget-box-content">
+                        <ul style="margin-bottom: 2px;">
+                            <li>
+                                                                <a href="//koudaitong.com/v2/setting/wxsettled">
+                                    <i class="ico-usefull-link ico-usefull-link4"></i>
+                                    <span>微信</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="//koudaitong.com/v2/showcase/goods/create">
+                                    <i class="ico-usefull-link ico-usefull-link1"></i>
+                                    <span>发布商品</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="//koudaitong.com/v2/showcase/feature#list">
+                                    <i class="ico-usefull-link ico-usefull-link2"></i>
+                                    <span>页面管理</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://b.im.koudaitong.com/" target="_blank">
+                                    <i class="ico-usefull-link ico-usefull-link3"></i>
+                                    <span>客服系统</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="//koudaitong.com/v2/ump/tradeincard">
+                                    <i class="ico-usefull-link ico-usefull-link5"></i>
+                                    <span>优惠券</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="//koudaitong.com/v2/apps/cashier">
+                                    <i class="ico-usefull-link ico-usefull-link7"></i>
+                                    <span>收银台</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="//koudaitong.com/v2/apps/directseller">
+                                    <i class="ico-usefull-link ico-usefull-link6"></i>
+                                    <span>销售员</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="//koudaitong.com/v2/trade/newsettlement#income">
+                                    <i class="ico-usefull-link ico-usefull-link8"></i>
+                                    <span>收入/提现</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="//koudaitong.com/v2/statcenter/order">
+                                    <i class="ico-usefull-link ico-usefull-link9"></i>
+                                    <span>交易分析</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="//koudaitong.com/v2/service" target="_blank">
+                                    <i class="ico-usefull-link ico-usefull-link10"></i>
+                                    <span>帮助中心</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget-box recommended-apps">
+                    <div class="widget-box-header">
+                        <h3 class="widget-box-title">
+                            营销应用
+                            <div class="widget-box-opts">
+                                <a href="//koudaitong.com/v2/ump/dashboard">营销中心</a>
+                            </div>
+                        </h3>
+                    </div>
+                    <div class="widget-box-content">
+                        <div class="tofu-container">
+                            <a class="tofu tofu-green" href="//koudaitong.com/v2/ump/groupon">
+                                <h4>多人拼团</h4>
+                                <p>裂变式营销玩法</p>
+                            </a>
+                            <a class="tofu tofu-cyan" href="//koudaitong.com/v2/ump/pointsstore" target="_blank">
+                                <h4>积分商城</h4>
+                                <p>用积分提升粉丝黏性</p>
+                            </a>
+                            <a class="tofu tofu-blue" href="//koudaitong.com/v2/apps/cashier">
+                                <h4>有赞收银台</h4>
+                                <p>独立收款不受店铺打烊影响</p>
+                            </a>
+                            <a class="tofu tofu-purple" href="//koudaitong.com/v2/ump/seckill">
+                                <h4>秒杀</h4>
+                                <p>快速抢购引导顾客更多消费</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-row">
+                    <div class="dashboard-col">
+                            <div class="ui-box widget-box cms-suggest">
+        <div class="widget-box-header">
+            <h4 class="widget-box-title">
+                经营建议
+                <div class="widget-box-opts">
+                    <a href="http://bbs.youzan.com/forum.php?mod=forumdisplay&amp;fid=56" target="_blank">更多</a>
+                </div>
+            </h4>
+        </div>
+        <div class="widget-box-content">
+            <ul>
+                                                        <li>
+                        <a href="https://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=521813&amp;extra=" target="_blank">
+                            <h4 title="酒店客栈版">
+                                酒店客栈版                            </h4>
+                            <p>酒店房态预订即将发布</p>
+                        </a>
+                                        </li>
+                                                        <li>
+                        <a href="https://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=484119" target="_blank">
+                            <h4 title="多门店系统">
+                                多门店系统                            </h4>
+                            <p>门店O2O整体解决方案</p>
+                        </a>
+                                        </li>
+                                                        
+                                                        
+                            </ul>
+            <ul>
+                                                        
+                                                        
+                                                        <li>
+                        <a href="https://wap.koudaitong.com/v2/showcase/feature?alias=5g1wq3d1" target="_blank">
+                            <h4 title="硬件插件">
+                                硬件插件                            </h4>
+                            <p>通过第三方硬件/插件让玩法更多</p>
+                        </a>
+                                        </li>
+                                                        <li>
+                        <a href="https://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=513110&amp;extra=page%253D1" target="_blank">
+                            <h4 title="电子卡券">
+                                电子卡券                            </h4>
+                            <p>有赞虚拟商品重大升级</p>
+                        </a>
+                                        </li>
+                            </ul>
+        </div>
+    </div>
+                    </div>
+                    <div class="dashboard-col">
+                        <div class="ui-box widget-box widget-gray-box cms-learn">
+    <div class="widget-box-header">
+        <h4 class="widget-box-title">
+            学习交流
+            <div class="widget-box-opts">
+                <a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=443751&amp;extra=page%3D1" target="_blank">更多渠道</a>
+            </div>
+        </h4>
+    </div>
+    <div class="widget-box-content">
+        <ul>
+            <li>
+                <a href="http://bbs.youzan.com/forum.php" target="_blank">
+                    <i style="background-position: -40px 0;"></i>
+                    <h4>在线论坛</h4>
+                    <p>百万商家互通互助</p>
+                </a>
+            </li>
+            <li>
+                <a href="//sm.youzan.com" target="_blank">
+                    <i style="background-position: -40px -40px;"></i>
+                    <h4>本地商盟</h4>
+                    <p>加入本地商家联盟</p>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="http://xuetang.youzan.com/" target="_blank">
+                    <i style="background-position: -40px -80px;"></i>
+                    <h4>在线课堂</h4>
+                    <p>资深专家视频授课</p>
+                </a>
+            </li>
+            <li>
+                <a href="//fuwu.youzan.com/" target="_blank">
+                    <i style="background-position: -40px -120px;"></i>
+                    <h4>服务市场</h4>
+                    <p>有赞拍档帮你经营</p>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=405975" target="_blank">
+                    <i style="background-position: -40px -160px;"></i>
+                    <h4>线下培训</h4>
+                    <p>专业讲师当面教学</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=406316" target="_blank">
+                    <i style="background-position: -40px -200px;"></i>
+                    <h4>官方定制</h4>
+                    <p>定制开发专享功能</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dashboard-right">
+                
+    <div class="right-side-banner">
+        <a href="https://wap.koudaitong.com/v2/feature/d519gsat" target="_blank">
+            <img src="https://img.yzcdn.cn/public_files/2016/08/24/b4be426dea4608f78a284d73a718968d.png" srcset="https://img.yzcdn.cn/public_files/2016/08/24/d363dbb4b021d31bbffc0ed0118c5357.png 2x">
+        </a>
+    </div>
+                <div class="dashboard-app-download" style="margin-bottom: 2px;">
+    <a href="javascript:;" class="">
+        <i class="ico-mobile-app"></i>
+        <h4>商家版手机客户端</h4>
+        <p>用手机随时随地管理店铺</p>
+    </a>
+    <div class="ui-popover left-center dashboard-app-download-popover">
+        <div class="ui-popover-inner">
+            <h3>使用微信扫码，直接下载安装</h3>
+            <div class="clearfix">
+                <div class="pull-left mobile-app-item">
+                    <h4>iOS版</h4>
+                    <img src="https://img.yzcdn.cn/public_files/2016/05/04/68a6a0e7f2739297f05de593435d1e2e.png">
+                    <a href="https://itunes.apple.com/cn/app/kou-dai-tong/id880579403" target="_blank">App Store</a>
+                </div>
+                <div class="pull-right mobile-app-item">
+                    <h4>Android版</h4>
+                    <img src="https://img.yzcdn.cn/public_files/2016/05/04/4cea45004b6d21ae9da440d1f8c5fbf5.png">
+                    <a href="https://dl.yzcdn.cn/koudaitong.apk" target="_blank">直接下载</a>
+                </div>
+            </div>
+        </div>
+        <div class="arrow"></div>
+    </div>
+</div>
+
+<div class="dashboard-app-download" style="margin-bottom: 15px;">
+    <a href="javascript:;" class="">
+        <i class="ico-im-app"></i>
+        <h4>桌面在线客服</h4>
+        <p>即时应答客户在线咨询</p>
+    </a>
+    <div class="ui-popover left-center dashboard-app-download-popover">
+        <div class="ui-popover-inner">
+            <h3>下载客服系统桌面客户端</h3>
+            <div class="clearfix" style="padding: 0 35px;">
+                <div class="pull-left im-app-item">
+                    <a href="http://dl.koudaitong.com/kdt_mac.zip" target="_blank">
+                        <i class="im-app-icon-mac"></i>
+                        <div>Mac 版本</div>
+                    </a>
+                </div>
+                <div class="pull-right im-app-item">
+                    <a href="http://dl.koudaitong.com/kdt_windows.zip" target="_blank">
+                        <i class="im-app-icon-windows"></i>
+                        <div>Windows 版本</div>
+                    </a>
+                </div>
+            </div>
+            <div class="dashboard-app-download-popover-footer clearfix">
+                <a href="http://b.im.koudaitong.com" class="pull-left" target="_blank">进入网页版 <span>&gt;</span></a>
+                <a href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=410434&amp;page=1&amp;extra=" class="pull-right" target="_blank">新手必读：客服系统使用指南</a>
+            </div>
+        </div>
+        <div class="arrow"></div>
+    </div>
+</div>
+
+<div class="dashboard-app-download dashboard-app-survey">
+    <a target="_blank" href="https://wap.koudaitong.com/v2/apps/vote/index.html?alias=isfnn7a9&amp;kdt_id=15414239&amp;phone=18631451216">
+        <img src="http://img.yzcdn.cn/public_files/2016/09/11/af7e82680034fda66c7e1521d58ab21d.png" alt="调查">
+        <h4>商家经营状况调研</h4>
+        <p>更了解您，才能更好地服务您</p>
+    </a>
+</div> 
+                    <div class="ui-box widget-box widget-cms-list">
+        <div class="widget-box-header">
+            <h4 class="widget-box-title">有赞神厨</h4>
+        </div>
+        <div class="widget-box-content">
+            <ul>
+                <li class=""><a href="" target="_blank"> [提醒]店铺打烊不影响继续使用收银台 </a></li>
+            </ul>            
+                                                                                                                                                                                                                                                                                                         >
+        </div>
+    </div>
+    <div class="ui-box widget-box widget-cms-list">
+        <div class="widget-box-header">
+            <h4 class="widget-box-title">线下活动</h4>
+        </div>
+        <div class="widget-box-content">
+            <ul>
+                                                            <li class="">
+                            <a href="http://kdt.im/50llLr" target="_blank">
+                                杭州：运营者特训营第十期                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                        </ul>
+        </div>
+    </div>
+                                    <div class="ui-box widget-box widget-cms-list">
+        <div class="widget-box-header">
+            <h4 class="widget-box-title">
+                产品动态
+                <div class="widget-box-opts">
+                    <a target="_blank" href="http://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=3410&amp;extra=page&amp;3D1">更多</a>
+                </div>
+            </h4>
+        </div>
+        <div class="widget-box-content">
+            <ul>
+                                                            <li class="">
+                            <a href="https://bbs.youzan.com/forum.php?mod=viewthread&amp;tid=535203" target="_blank">
+                                9月13日 用卡券名和核销时间筛选核销纪录                            </a>
+                        </li>
+                            
+                                                </ul>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>            </div>
+            <div class="notify-bar js-notify animated hinge hide">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ▲ Main container -->
+
+<div id="app-footer">
+    <a href="{$config.website}" class="logo" target="_blank"></a>
+</div>
+<script type="http://rc.vuejs.org/js/vue.js"></script>
+<script type="text/javascript">
+var vm = new Vue({
+  // 选项
+})
+</script>
+</body>
+</html>

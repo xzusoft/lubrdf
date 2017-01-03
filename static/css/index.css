@@ -1,0 +1,21 @@
+/*
+.navbar-nav li {
+    float: left;
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 30px 0 28px;
+    height: 60px;
+    line-height: 60px;
+}
+.navbar .new-dropdown {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    position: relative;
+    z-index: 200;
+    font-size: 14px;
+    padding: 0 30px 0 28px;
+}*/
+.footer{margin-top: 20px;text-align: center;color: #999;}

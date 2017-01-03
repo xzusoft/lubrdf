@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+	<html lang="zh-cn">
+    <head>
+    	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>管理员登录</title>
+		<link rel="stylesheet" href="//g.alicdn.com/sui/sui3/0.0.18/css/sui.min.css">
+	    <!--[if lt IE 9]>
+		<script src="//g.alicdn.com/sui/sui3/0.0.18/js/lib/html5shiv.min.js"></script>
+		<script src="//g.alicdn.com/sui/sui3/0.0.18/js/lib/respond.min.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="{$config.cssjs}css/login.css">
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body class="loginbody">
+		<form class="form-horizontal" id="login_form" action="{:url('manage/login/tologin');}" method="post">
+			<div class="login-wrap form-group">
+				<div class="login-logo">LOGO</div>
+				<div class="login-form">
+					<div class="col">
+						<input name="username" type="text" class="login-input in" placeholder="管理员账号" title="管理员账号" />
+					</div>
+					<div class="col">
+						<input name="password" type="password" class="login-input in" placeholder="管理员密码" title="管理员密码"/>
+					</div>
+					<div class="col">
+						<input name="verify" type="text" class="login-code in" id="captcha" />
+						<span style="float: right;"><img src="{:captcha_src()}" id="captcha_img" width="120px" height="40px" class="verifyimg" alt="点击更换" title="点击更换"/></span>
+					</div>
+
+					<div class="col">
+						<input type="submit" name="btnSubmit" value="登 录" id="btnSubmit" class="login-btn" />
+					</div>
+				</div>
+				<div class="login-tips"><i></i>
+					<p id="msgtip error-container" class="login_msg">请输入用户名或密码</p>
+				</div>
+			</div>
+
+			<div class="copy-right">
+				<p>版权所有 承德乐游宝软件开发有限公司 Copyright © <?php echo date('Y');?> <a href="http://www.leubao.com">leubao.com</a></p>
+				<p>业务支撑平台 <a href="http://www.alizhiyou.com/" target="_blank">alizhiyou.com</a>   Inc. All Rights Reserved.</p>
+			</div>
+		</form>
+		<script type="text/javascript" src="//g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+    	<script type="text/javascript" src="//g.alicdn.com/sui/sui3/0.0.18/js/sui.min.js"></script>
+    	<script type="text/javascript">
+			$(function(){
+				$("#login_form").submit(function(){
+					var issubmit = true;
+					var i_index  = 0;
+					$(this).find('.in').each(function(i){
+						if ($.trim($(this).val()).length == 0) {
+							//$(this).css('border', '1px #ff0000 solid');
+							//$(this).css('background', '#ff0000');
+							issubmit = false;
+							if (i_index == 0)
+								i_index  = i;
+						}
+					});
+					if (!issubmit) {
+						$(this).find('.in').eq(i_index).focus();
+						return false;
+					}
+					$("#btnSubmit").attr("disabled", true).val('登录中..');
+					var self = $(this);
+					$.post(self.attr("action"), self.serialize(), success, "json");
+			        return false;
+			        function success(data){
+			            if(data.code == '1'){
+			                window.location.href = data.url;
+			            } else {
+			            	self.find(".login_msg").css('display','block');
+			                self.find(".login_msg").text(data.msg);
+			                //刷新验证码
+			                changeCode();
+			                $("#btnSubmit").attr("disabled",false).val("登录");
+			                //setTimeout(function(){self.find(".login_msg").css('display','none')},20000);
+			            }
+			        }
+				});
+			});
+			//刷新验证码
+			$('#captcha').focus(function(){changeCode();});
+			$("#captcha_img").click(function(){changeCode();});
+			function changeCode(){
+				$("#captcha_img").attr("src", "{:captcha_src()}&time="+genTimestamp());
+			}
+			function genTimestamp(){
+				var time = new Date();
+				return time.getTime();
+			}
+    	</script>
+	</body>
+</html>

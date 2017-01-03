@@ -1,0 +1,32 @@
+{layout name="layout" /}
+<div class="header">
+  <div class="pull-right""><a href="{:url('index/login/login');}" target="_blank">已有帐号, 立即登录</a></div>
+  <a href="{:url('index/index/index')}">
+      <div class="header-logo"></div>
+  </a>
+  <div class="header-title">免费注册</div>
+</div>
+<div class="main">
+  <form class="form-horizontal public_form regform" action="{:url('index/login/register');}" method="post">
+    <div class="alert alert-danger logintip" role="alert">
+      </div>
+    <div class="form-group">
+      <input type="text" class="form-control input-lg" name="phone" id="phone" placeholder="今后使用手机号登录">
+    </div>
+    <div class="form-group">
+      <div class="col-xs-8 sms">
+        <input type="text" class="form-control input-lg" name="verify" id="sms" placeholder="6位短信验证码">
+      </div>
+      <button type="button" class="btn btn-default" id="sndCode" onclick="sendMessage('regform',1)">获取验证码</button>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control input-lg" name="name" id="name" placeholder="名称(之后可修改)">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control input-lg" name="password" id="password" placeholder="8~20位字符，包含字母和数字">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-xl btn-block">确认注册</button>
+    </div>
+  </form>
+</div>

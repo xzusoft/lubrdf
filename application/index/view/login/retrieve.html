@@ -1,0 +1,29 @@
+{layout name="layout" /}
+<div class="header">
+  <div class="pull-right""><a href="{:url('index/login/login');}" target="_blank">登录</a></div>
+  <a href="{:url('index/index/index')}">
+      <div class="header-logo"></div>
+  </a>
+  <div class="header-title">找回密码</div>
+</div>
+<div class="main">
+<form class="form-horizontal public_form retform" action="{:url('index/login/retrieve');}" method="post">
+  <div class="alert alert-danger logintip" role="alert">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control input-lg" name="phone" id="phone" placeholder="注册时填写的手机号">
+  </div>
+  <div class="form-group">
+    <div class="col-xs-8 sms">
+      <input type="text" class="form-control input-lg" name="verify" id="sms" placeholder="6位短信验证码">
+    </div>
+    <button type="button" class="btn btn-default" id="sndCode" onclick="sendMessage('retform',2)">获取验证码</button>
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control input-lg" name="password" id="password" placeholder="设置新密码">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-xl btn-block btnSubmit">确认修改</button>
+  </div>
+</form>
+</div>

@@ -1,0 +1,122 @@
+{layout name="layout" /}
+<div class="header">
+  <div class="pull-right"">{$uinfo.nickname} - <a href="{:url('index/index/register');}" target="_blank">帮助</a> - <a href="{:url('index/index/logout');}">退出</a></div>
+  <a href="{:url('index/index/index')}">
+      <div class="header-logo"></div>
+  </a>
+  <div class="header-title">选择公众账号</div>
+</div>
+<div class="main">
+  <div class="steps">
+    <div class="wrap col-md-4">
+      <div class="current">
+        <label><span class="round">1</span><span>设置公众号信息</span></label><i class="triangle-right-bg"></i><i class="triangle-right"></i>
+      </div>
+    </div>
+    <div class="wrap col-md-4">
+      <div class="todo">
+        <label><span class="round">2</span><span>设置权限</span></label>
+      </div>
+    </div>
+    <div class="wrap col-md-4">
+      <div class="todo">
+        <label><span class="round">3</span><span>完成</span></label>
+      </div>
+    </div>
+  </div>
+  <!--提示信息--
+  <div class="alert alert-danger" role="alert">
+    <strong>注意:</strong> 获取公众号信息功能极不稳定，建议您使用 授权登录添加公众号，或是跳过此步，手动添加
+  </div>
+  !--提示信息-->
+  <div class="box">
+    <form class="form-horizontal l_ajaxForm" action="{:url('Index/panel/wechat')}" method="post">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">公众号名称</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="name"  placeholder="公众号名称">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">原始ID</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="original_id" placeholder="原始ID如:gh_ea0b324600ce">
+          <p class="help-block">在给粉丝发送客服消息时,原始ID不能为空。建议您完善该选项</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">APPID</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="appid" placeholder="如:gh_ea0b324600ce">
+          <p class="help-block">请填写微信公众平台后台的AppId</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">AppSecret</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="appsecret" placeholder="原始ID如:gh_ea0b324600ce">
+          <p class="help-block">请填写微信公众平台后台的AppSecret, 只有填写这两项才能管理自定义菜单</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">token</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="password" placeholder="原始ID如:gh_ea0b324600ce">
+          <p class="help-block">与公众平台接入设置值一致，必须为英文或者数字，长度为3到32个字符. 请妥善保管, Token 泄露将可能被窃取或篡改平台的操作数据.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">EncodingAESKey</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="password" placeholder="原始ID如:gh_ea0b324600ce">
+          <p class="help-block">与公众平台接入设置值一致，必须为英文或者数字，长度为43个字符. 请妥善保管, EncodingAESKey 泄露将可能被窃取或篡改平台的操作数据.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">接口地址</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" disabled value="{$url}">
+          <p class="help-block">设置“公众平台接口”配置信息中的接口地址</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">logo</label>
+        <div class="col-sm-8">
+          <div class="input-group">
+            <input type="text" class="form-control" id="upload" placeholder="请点击后面的上传按钮" datatype="*" nullmsg="请填写图片url">
+            <div class="input-group-btn" role="group" aria-label="...">
+              <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'upload\'])}')">上传</button>
+            <a onclick="$(this).attr('href', $('#upload').val())" type="button" class="btn btn-success radius" data-lightbox="preview">预览</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">二维码</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="password" placeholder="原始ID如:gh_ea0b324600ce">
+          <p class="help-block">公众平台二维码</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">证书cert的路径</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="password" placeholder="原始ID如:gh_ea0b324600ce">
+          <p class="help-block">操作退款或打款时必需</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">证书key的路径</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="password" placeholder="原始ID如:gh_ea0b324600ce">
+          <p class="help-block">操作退款或打款时必需</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6 col-md-offset-3">
+          <button type="submit" class="btn btn-primary btn-lg l_ajax_submit_btn">立即设置</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

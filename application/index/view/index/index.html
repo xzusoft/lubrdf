@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>阿里智游,全网旅游分销平台 Alizhiyou.com </title>
+    <link rel="stylesheet" href="//g.alicdn.com/sui/sui3/0.0.18/css/sui.min.css">
+	<link rel="stylesheet" href="/static/css/index.css">
+    <link rel="icon" href="https://www.alizhiyou.com/static/img/favicon.ico" type="image/x-icon">
+  	<link rel="shortcut icon" href="https://www.alizhiyou.com/static/img/favicon.ico" type="image/x-icon">
+	<!--倒计时-->
+	<!--[if IE]><script type="text/javascript" src="/public/static/indexjs/excanvas.js"></script><![endif]-->
+	<style type="text/css" media="screen">
+		.countdown { margin:0 auto 30px auto; max-width:800px; width:calc(100%;); padding:30px; display:block; }
+		#rcb { color: #222; }
+		b { font-weight:600!important; }
+	</style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+	  <div class="container">
+	    <!-- logo -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#"><strong>Alizhiyou</strong>.com</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+				<li><a href="#">代理商</a></li>
+				<li><a href="/manage">管理</a></li>
+				<li class="new-dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">开发测试 <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+				    <li><a href="{:url('index/panel/index');}">用户面板</a></li>
+				    <li><a href="#">Another action</a></li>
+				    <li><a href="#">Something else here</a></li>
+				    <li class="divider"></li>
+				    <li><a href="#">Separated link</a></li>
+				    <li class="divider"></li>
+				    <li><a href="#">One more separated link</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">开发测试 <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+				    <li><a href="{:url('index/panel/index');}">用户面板</a></li>
+				    <li><a href="#">Another action</a></li>
+				    <li><a href="#">Something else here</a></li>
+				    <li class="divider"></li>
+				    <li><a href="#">Separated link</a></li>
+				    <li class="divider"></li>
+				    <li><a href="#">One more separated link</a></li>
+				  </ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="{:url('index/login/login');}">登录</a></li>
+				<li><a href="{:url('index/login/register');}">注册</a></li>
+			</ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+    <div class="container">
+    	<!--s 倒计时-->
+    	<div id="rcb" class="countdown"></div>
+		<!--e 倒计时-->
+		<embed src="/public/viewlogo.svg" type="image/svg+xml" />
+		<div class="footer">
+			<p class="copyright">版权所有 承德乐游宝软件开发有限公司 Copyright © <?php echo date('Y');?> <a href="http://www.leubao.com">leubao.com</a></p>
+		</div>
+	</div>
+    <script type="text/javascript" src="//g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//g.alicdn.com/sui/sui3/0.0.18/js/sui.min.js"></script>
+    <!--倒计时-->
+    <script src="/public/static/indexjs/jquery.knob.min.js"></script>
+	<script src="/public/static/indexjs/jquery.ba-throttle-debounce.min.js"></script>
+	<script src="/public/static/indexjs/jquery.redcountdown.js"></script>
+	<script type="text/javascript">
+	var time = new Date();
+	$('#rcb').redCountdown({
+		/*end: $.now() + 10000,*/
+		end:'1490976000',
+		now:'{$today}',
+		labels: true,
+		style: {
+			element: "",
+			textResponsive: .5,
+			daysElement: {
+				gauge: {
+					thickness: .05,
+					bgColor: "rgba(255,255,255,0.05)",
+					fgColor: "#1abc9c"
+				},
+				textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:300; color:#2f2d2d;'
+			},
+			hoursElement: {
+				gauge: {
+					thickness: .05,
+					bgColor: "rgba(255,255,255,0.05)",
+					fgColor: "#2980b9"
+				},
+				textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:300; color:#2f2d2d;'
+			},
+			minutesElement: {
+				gauge: {
+					thickness: .05,
+					bgColor: "rgba(255,255,255,0.05)",
+					fgColor: "#8e44ad"
+				},
+				textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:300; color:#2f2d2d;'
+			},
+			secondsElement: {
+				gauge: {
+					thickness: .05,
+					bgColor: "rgba(255,255,255,0.05)",
+					fgColor: "#f39c12"
+				},
+				textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:300; color:#2f2d2d;'
+			}
+			
+		},
+		onEndCallback: function() { console.log("Time out!"); }
+	});
+	</script>
+  </body>
+</html>

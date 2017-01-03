@@ -1,0 +1,54 @@
+{layout name="layout" /}
+<div class="header">
+  <div class="pull-right"">{$uinfo.nickname} - <a href="{:url('index/index/register');}" target="_blank">帮助</a> - <a href="{:url('index/index/logout');}">退出</a></div>
+
+  <a href="{:url('index/index/index')}" class="js-route">
+      <div class="header-logo"></div>
+  </a>
+  <div class="header-title">选择公众账号</div>
+</div>
+<div class="team">
+  <div class="panel panel-default">
+    <div class="panel-heading ">
+      <div class="user-info">
+          <span class="avatar" style="background-image: url(https://img.yzcdn.cn/upload_files/avatar.png?imageView/1/w/100/h/100)"></span>
+          <div class="user-info-content">
+              <div class="info-row">{$uinfo.nickname}</div>
+              <div class="info-row info-row-info">帐号: {$uinfo.phone}</div>
+              <a href="javascript:;" class="personal-setting">设置</a>
+          </div>
+          <div class="team-opt-wrapper">
+              <a href="{:url('index/panel/create_account','type=wechat');}">授权添加公众账号</a> | <a href="{:url('index/panel/create_account','type=weibo');}">授权添加微博</a>
+          </div>
+      </div>
+    </div>
+    <div class="panel-body team-select">
+      <volist name="data" id="vo">
+      <div class="col-xs-4">
+        <div class="bs-callout bs-callout-info account-list">
+          <h4>阿里智游</h4>
+          <p><a href="">设置权限</a> <a href="">操作员管理</a> <a href="">编辑</a> <a href="">删除</a></p>
+        </div>
+      </div>
+      </volist>
+      <div class="col-xs-4">
+        <div class="bs-callout bs-callout-warning account-list">
+          <h4>阿里智游</h4>
+          <p><a href="">设置权限</a> <a href="">操作员管理</a> <a href="">编辑</a> <a href="">删除</a></p>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="bs-callout bs-callout-danger account-list">
+          <h4>阿里智游</h4>
+          <p><a href="">设置权限</a> <a href="">操作员管理</a> <a href="">编辑</a> <a href="">删除</a></p>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="bs-callout bs-callout-info account-list">
+          <h4>阿里智游</h4>
+          <p><a href="">设置权限</a> <a href="">操作员管理</a> <a href="">编辑</a> <a href="">删除</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

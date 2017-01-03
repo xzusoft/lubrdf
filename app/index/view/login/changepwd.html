@@ -1,0 +1,27 @@
+{layout name="layout_login" /}
+<div class="header">
+    <div class="header-side""><a href="{:url('index/index/index');}">返回首页</a></div>
+
+    <a href="{:url('index/index/index')}">
+        <div class="header-logo"></div>
+    </a>
+    <div class="header-title">修改密码</div>
+  </div>
+<div class="main">
+  <form class="form-horizontal public_form changeform" action="{:url('index/login/changepwd');}" method="post">
+    <div class="alert alert-danger logintip" role="alert">
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control input-lg" name="hpassword" placeholder="请输入旧密码">
+    </div>
+    <div class="form-group">
+          <input type="password" class="form-control input-lg" name="password" id="password" placeholder="请输入新密码">
+      </div>
+      <div class="form-group">
+          <input type="password" class="form-control input-lg" name="npassword" placeholder="请重复输入新密码">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-xl btn-block btnSubmit">更新密码</button>
+      </div>
+  </form>
+</div>

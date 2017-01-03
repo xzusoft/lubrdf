@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{$config.sitename}</title>
+<link rel="icon" href="https://b.yzcdn.cn/v2/image/yz_fc.ico" />
+<meta name="keywords" content="{$config.keywords}" />
+<meta name="description" content="{$config.siteinfo}" />
+<!-- ▼ Common CSS -->
+<link rel="stylesheet" href="{$config.cssjs}/common/css/bootstrap.css" media="screen">
+<link rel="stylesheet" href="{$config.cssjs}/css/pc.css" media="screen">
+<!-- ▲ Common CSS -->
+<link rel="stylesheet" href="{$config.cssjs}/css/sigup.css" media="screen">
+</head>
+<body>
+<div class="container js-container">
+    <div id="header"><div><div class="header-side"><a href="{:url('manage/login/login')}" target="_blank" class="js-route-transfer">登录</a></div>
+
+<a href="//youzan.com" class="js-route">
+    <div class="header-logo"></div>
+</a>
+<div class="header-title">免费注册</div>
+</div></div>
+    <div id="main">
+    	<div class="clearfix">
+    		<div class="content js-content">
+			    <form novalidate="" class="form-horizontal"><!-- 禁止chrome自动填写 -->
+					<input style="display:none" type="text" name="fakeusernameremembered">
+					<input style="display:none" type="password" name="fakepasswordremembered">
+					<div class="control-group">
+					    <label class="control-label"><em class="required">*</em>手机号码：</label>
+					    <div class="controls">
+					        <input type="text" class="js-mobile" name="mobile" placeholder="今后使用手机号登录" maxlength="11" autocomplete="off">
+					    </div>
+					</div>
+					<div class="control-group">
+					    <label class="control-label"><em class="required">*</em>短信校验码：</label>
+					    <div class="controls">
+					        <div class="input-append">
+					            <input class="input-half" type="text" maxlength="6" name="sms_captcha">
+					            <button type="button" class="btn js-fetch-sms btn-disabled" disabled="disabled">获取</button>
+					        </div>
+					    </div>
+					</div>
+					<div class="control-group">
+					    <label class="control-label"><em class="required">*</em>个人昵称：</label>
+					    <div class="controls">
+					        <input type="text" name="nick_name" placeholder="行不更名，坐不改姓" maxlength="15">
+					    </div>
+					</div>
+					<div class="control-group">
+					    <label class="control-label"><em class="required">*</em>设置密码：</label>
+					    <div class="controls" style="position: relative;">
+					        <input class="js-password-focus" type="password" name="password" placeholder="8~20位字符" maxlength="20" autocomplete="off">
+					        <div class="security-level" style="display:none;">安全程度：<span class="">弱</span><span class="">中</span><span class="">强</span></div>
+					        <div class="controls-tip js-show-tip" style="">8-20位字符，包含字母和数字，建议字母包含大小写组合。</div>
+					    </div>
+					</div>
+					<div class="control-group">
+					    <label class="control-label"><em class="required">*</em>确认密码：</label>
+					    <div class="controls">
+					        <input type="password" name="password_again" placeholder="再输一次" maxlength="20">
+					    </div>
+					</div>
+					<div class="control-group">
+					    <div class="controls">
+					        <button type="submit" class="btn btn-large btn-primary btn-signup js-btn-signup" data-loading-text="确认注册...">确认注册</button>
+					    </div>
+					</div>
+					<div class="help-popover">
+					    如果您是经拍档或朋友邀请，请在此填写他给您的邀请码<br>
+					    如果没有，就不用填写
+					</div>
+				</form>
+			</div>
+			<div class="sidebar js-sidebar"></div>
+<div class="service-qrcode js-qrcode">
+	<img src="https://img.yzcdn.cn/public_files/2016/01/22/e5e1e26b9cacc921022ba1df45834d00.jpeg" width="160" height="160">
+	<p class="td-title">关注官方微信，了解更多资讯</p>
+</div>
+</div></div>
+    <div id="footer"><p class="copyright">© <a href="//{$config.website}">{$config.website}</a></p></div>
+</div>
+</body>
+</html>
