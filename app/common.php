@@ -26,8 +26,7 @@ function array2object($array) {
     foreach ($array as $key => $val){
       $obj->$key = $val;
     }
-  }
-  else { $obj = $array; }
+  }else { $obj = $array; }
   return $obj;
 }
 //对象转数组
@@ -36,8 +35,7 @@ function object2array($object) {
     foreach ($object as $key => $value) {
       $array[$key] = $value;
     }
-  }
-  else {
+  }else {
     $array = $object;
   }
   return $array;
@@ -48,8 +46,7 @@ function object2array($object) {
  * @param $type encode 加密  其他为解密
  */
 function IdCode($param,$type = ''){
-    //$xcode = new \Libs\Util\XDeode();
-    $xcode = new \lubrdf\extend\XDeode();
+    $xcode = new \lubrdf\common\service\XDeode();
     if($type){
         $return = $xcode->decode($param);
     }else{
