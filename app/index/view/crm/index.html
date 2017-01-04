@@ -1,15 +1,48 @@
 {layout name="layout" /}
-<link rel="stylesheet" href="/static/js/grid.min.css">
-  <div class="header">
-  <div class="btn-group" role="group">
-    <a type="button" class="btn btn-success" href="{:url('index/crm/add')}">新增客户</a>
-    <a type="button" class="btn btn-default">查询客户</a>
-  </div>
-  </div>
-  <div class="main">
+<div class="header">
+<div class="btn-group" role="group">
+  <a type="button" class="btn btn-success" href="{:url('index/crm/add')}">新增客户</a>
+  <a type="button" class="btn btn-default">查询客户</a>
+</div>
+</div>
+<div class="main">
+    <table id="table"
+        data-toggle="table"
+        data-search="true"
+        data-show-refresh="true"
+        data-show-toggle="true"
+        data-show-columns="true"
+        data-pagination="true"
+                
+        data-url="//www.alizhiyou.com/public/json.json">
+        <thead>
+        <tr>
+            <th data-field="state" data-checkbox="true"></th>
+            <th data-field="id">Item Name</th>
+            <th data-field="name">Item Name</th>
+            <th data-field="price">Item Price</th>
+            <th data-field="column2">license</th>
+        </tr>
+    </thead>
+    </table>
 
-    <div id="gridContainer_2_1_1" class="dlshouwen-grid-container"></div
-    <div id="gridToolBarContainer_2_1_1" class="dlshouwen-grid-toolbar-container"></div>
 
-  </div>
-  
+</div>
+{include file="common/js" /}
+<script type="text/javascript">
+   $('#table').bootstrapTable({
+      height: getHeight(),
+      
+  });
+  function getHeight() {
+        return $(window).height() - $('h1').outerHeight(true);
+    }
+    function totalPriceFormatter(data) {
+        var total = 0;
+        $.each(data, function (i, row) {
+            total += +(row.price.substring(1));
+        });
+        return '$' + total;
+    }
+
+</script>
