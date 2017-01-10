@@ -56,4 +56,31 @@ class Crm extends Item{
             return $this->fetch(); 
        }
     }
+    //操作日志记录
+    function actionLog(){
+        //谁什么时间操作了什么
+    }
+    //分日期按场次分渠道商(开启代理商制度统一汇总到所属一级渠道商)按票型汇总
+    function today_plan_channel_summary(){
+        1、拆分订单
+        2、按日期查询汇总归类
+        3、写入汇总表
+
+    }
+    /**
+     * 清道夫 运行在乐游宝平台上，由阿里智游平台按计划执行
+     * 1、清理过期作废订单
+     * 2、清理过期提醒
+     * 3、清理过期的座位表
+     * 4、清理过期操作日志
+     * 4、递归清理
+     * @return [type] [description]
+     */
+    function sweeper(){
+        //清理过期作废的订单 1、待支付的订单 
+        //2、
+    }
+    /**
+     * 
+     */
 }
