@@ -1,48 +1,83 @@
 {layout name="layout" /}
 <div class="header">
-<div class="btn-group" role="group">
-  <a type="button" class="btn btn-success" href="{:url('index/crm/add')}">新增客户</a>
-  <a type="button" class="btn btn-default">查询客户</a>
-</div>
+    <div class="btn-group" role="group">
+      <a type="button" class="btn btn-success" href="{:url('index/crm/add')}">新增客户</a>
+      <a type="button" class="btn btn-default">查询客户</a>
+    </div>
 </div>
 <div class="main">
-    <table id="table"
+    <div id="toolbar"></div>
+    <table  class="datatable"
         data-toggle="table"
         data-search="true"
         data-show-refresh="true"
         data-show-toggle="true"
         data-show-columns="true"
-        data-pagination="true"
-                
-        data-url="//www.alizhiyou.com/public/json.json">
-        <thead>
-        <tr>
-            <th data-field="state" data-checkbox="true"></th>
-            <th data-field="id">Item Name</th>
-            <th data-field="name">Item Name</th>
-            <th data-field="price">Item Price</th>
-            <th data-field="column2">license</th>
-        </tr>
-    </thead>
+        data-showFooter="true"
+        data-detail-view="true"
+        data-url="//www.alizhiyou.com/json.json">
     </table>
 
 
 </div>
 {include file="common/js" /}
+<!--可编辑表格 s-->
+<!--可编辑表格 e-->
 <script type="text/javascript">
-   $('#table').bootstrapTable({
-      height: getHeight(),
-      
-  });
-  function getHeight() {
-        return $(window).height() - $('h1').outerHeight(true);
-    }
-    function totalPriceFormatter(data) {
-        var total = 0;
-        $.each(data, function (i, row) {
-            total += +(row.price.substring(1));
-        });
-        return '$' + total;
-    }
+$('.datatable').bootstrapTable({
+    height: getHeight(),
+    method: 'get',
+    toolbar: '#toolbar',    //工具按钮用哪个容器
+    pagination: true,
+    dataType: "json",
+    pagination: true, //分页
+   // sidePagination: 'server',
+    pageSize: 20,
+    pageList: [5, 10, 20],
+    clickToSelect: true,    //是否启用点击选中行
+    columns: [{
+        field: 'id',
+        title: 'Item ID'
+    }, {
+        field: 'name',
+        algin:'center',
+        title: '客户名称'
+    }, {
+        field: 'price',
+        title: 'Item Price'
+    }, {
+        field: 'column2',
+        title: 'license'
+    }],
+    data: [{
+        id: 1,
+        name: 'Item 1',
+        price: '$1'
+    }, {
+        id: 2,
+        name: 'Item 2',
+        price: '$2'
+    }],
+    iconsPrefix:'fa',
+    icons:[{
+      paginationSwitchDown: 'glyphicon-collapse-down icon-chevron-down',
+      paginationSwitchUp: 'glyphicon-collapse-up icon-chevron-up',
+      refresh: 'glyphicon-refresh icon-refresh',
+      toggle: 'glyphicon-list-alt icon-list-alt',
+      columns: 'glyphicon-th icon-th',
+      detailOpen: 'glyphicon-plus icon-plus',
+      detailClose: 'glyphicon-minus icon-minus',
+    }]
+});
+function getHeight() {
+    return $(window).height() - $('h1').outerHeight(true);
+}
+function totalPriceFormatter(data) {
+    var total = 0;
+    $.each(data, function (i, row) {
+        total += +(row.price.substring(1));
+    });
+    return '$' + total;
+}
 
 </script>

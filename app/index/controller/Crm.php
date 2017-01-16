@@ -19,6 +19,16 @@ class Crm extends Item{
     {   
     	return $this->fetch();
     }
+    public function crm_list(){
+        $rows = array(
+
+            );
+        $data = array(
+            'total' => '300',
+            'rows'  =>  $rows,
+        );
+        return $data;
+    } 
     //新增客户资料
     function add(Request $request)
     {
