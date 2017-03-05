@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>找回密码</title>
+    <link rel="stylesheet" href="//g.alicdn.com/sui/sui3/0.0.18/css/sui.min.css">
+    <link rel="stylesheet" href="/static/css/login.v2.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="pull-right""><a href="{:url('index/index/register');}" target="_blank">免费注册,立即入住</a></div>
+
+        <a href="{:url('index/index/index')}" class="js-route">
+            <div class="header-logo"></div>
+        </a>
+        <div class="header-title">找回密码</div>
+      </div>
+      <div class="main">
+      <form class="form-horizontal public_form loginform" action="{:url('index/index/tologin');}">
+        <div class="form-group">
+          <input type="text" class="form-control input-lg" name="phone" id="phone" placeholder="注册时填写的手机号">
+        </div>
+        <div class="form-group">
+          <div class="col-xs-8 sms">
+            <input type="text" class="form-control input-lg" name="sms" id="sms" placeholder="6位短信验证码">
+          </div>
+          <button type="button" class="btn btn-default" id="sndCode" onclick="sendMessage()">验证码</button>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control input-lg" name="password" id="password" placeholder="设置新密码">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-xl btn-block">确认修改</button>
+        </div>
+      </form>
+      </div>
+      <div class="footer">
+        <p class="copyright">版权所有 承德乐游宝软件开发有限公司 Copyright © <?php echo date('Y');?> <a href="http://www.leubao.com">leubao.com</a></p>
+      </div>
+    </div>
+    <script type="text/javascript" src="//g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//g.alicdn.com/sui/sui3/0.0.18/js/sui.min.js"></script>
+    <script type="text/javascript" src="/static/js/common.js"></script>
+    <script type="text/javascript">  
+
+		$(".loginform").validate({
+		//验证表单
+			rules: {
+			  phone: {
+			    required: true,
+			    minlength : 11,
+			    isMobile: true
+			  },
+			  code: {
+			    required: true,
+			    minlength : 6,
+			  },
+			  password:{
+			    required: true,
+			    minlength : 6,
+			    regexPassword: true
+			  },
+			},
+			messages: {
+			  phone: "手机号码不合法",
+			  code: "请输入验证码",
+			  password:"密码不能为空"
+			},
+			submitHandler: function(form) {
+				$("#btnSubmit").attr("disabled", true).val('登录中..');
+				var self = $(this);
+				$.post(self.attr("action"), self.serialize(), success, "json");
+			  alert("Submitted!") 
+			  $(form).ajaxSubmit();
+			}
+		});
+      //刷新验证码
+		$('#code').focus(function(){changeCode();});
+		$(".captcha-img").click(function(){changeCode();});
+		function changeCode(){$(".captcha-img").attr("src", "{:captcha_src()}&time="+genTimestamp());}
+    </script>
+  </body>
+</html>

@@ -7,10 +7,10 @@
     <title>阿里智游,全网旅游分销平台 Alizhiyou.com </title>
     <link rel="stylesheet" href="//g.alicdn.com/sui/sui3/0.0.18/css/sui.min.css">
 	<link rel="stylesheet" href="/static/css/index.css">
-    <link rel="icon" href="https://www.alizhiyou.com/static/img/favicon.ico" type="image/x-icon">
-  	<link rel="shortcut icon" href="https://www.alizhiyou.com/static/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://new.leubao.com/static/img/favicon.ico" type="image/x-icon">
+  	<link rel="shortcut icon" href="http://new.leubao.com/static/img/favicon.ico" type="image/x-icon">
 	<!--倒计时-->
-	<!--[if IE]><script type="text/javascript" src="/public/static/indexjs/excanvas.js"></script><![endif]-->
+	<!--[if IE]><script type="text/javascript" src="/static/indexjs/excanvas.js"></script><![endif]-->
 	<style type="text/css" media="screen">
 		.countdown { margin:0 auto 30px auto; max-width:800px; width:calc(100%;); padding:30px; display:block; }
 		#rcb { color: #222; }
@@ -73,7 +73,7 @@
     	<!--s 倒计时-->
     	<div id="rcb" class="countdown"></div>
 		<!--e 倒计时-->
-		<embed src="/public/viewlogo.svg" type="image/svg+xml" />
+		<embed src="/viewlogo.svg" type="image/svg+xml" />
 		<div class="footer">
 			<p class="copyright">版权所有 承德乐游宝软件开发有限公司 Copyright © <?php echo date('Y');?> <a href="http://www.leubao.com">leubao.com</a></p>
 		</div>
@@ -81,9 +81,9 @@
     <script type="text/javascript" src="//g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="//g.alicdn.com/sui/sui3/0.0.18/js/sui.min.js"></script>
     <!--倒计时-->
-    <script src="/public/static/indexjs/jquery.knob.min.js"></script>
-	<script src="/public/static/indexjs/jquery.ba-throttle-debounce.min.js"></script>
-	<script src="/public/static/indexjs/jquery.redcountdown.js"></script>
+    <script src="/static/indexjs/jquery.knob.min.js"></script>
+	<script src="/static/indexjs/jquery.ba-throttle-debounce.min.js"></script>
+	<script src="/static/indexjs/jquery.redcountdown.js"></script>
 	<script type="text/javascript">
 	var time = new Date();
 	$('#rcb').redCountdown({
@@ -126,7 +126,6 @@
 				},
 				textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:300; color:#2f2d2d;'
 			}
-			
 		},
 		onEndCallback: function() { console.log("Time out!"); }
 	});

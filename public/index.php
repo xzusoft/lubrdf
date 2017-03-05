@@ -1,25 +1,18 @@
 <?php
 // +----------------------------------------------------------------------
-// | LubRDF 入口文件
+// | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2016 http://www.leubao.com, All rights reserved.
+// | Copyright (c) 2006-2016 http://thinkphp.cn All rights reserved.
 // +----------------------------------------------------------------------
-// | Author: zhoujing <admin@leubao.com>
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// 检测PHP环境
-if (version_compare(PHP_VERSION, '5.4.0', '<')) {
-	header("Content-type: text/html; charset=utf-8");
-    die('PHP环境不支持，使用本系统需要 PHP > 5.4.0 版本才可以~ !');
-}
-
+// | Author: liu21st <liu21st@gmail.com>
+// +----------------------------------------------------------------------
 // 定义应用目录
-//define('APP_PATH', __DIR__ . '/application/');
-// 定义项目路径
-define('APP_PATH', __DIR__ . '/../app/');
-//开启自动创建
-//define('APP_AUTO_BUILD',true);
-
-
+define('APP_PATH', __DIR__ . '/../application/');
 // 加载框架引导文件
 require __DIR__ . '/../thinkphp/start.php';
-
+// 读取自动生成定义文件
+//$build = include 'build.php';
+// 运行自动生成
+//\think\Build::run($build);

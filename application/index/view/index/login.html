@@ -1,0 +1,37 @@
+{layout name="layout" /}
+  <div class="header">
+    <div class="pull-right""><a href="{:url('index/index/register');}" target="_blank">免费注册,立即入住</a></div>
+
+    <a href="{:url('index/index/index')}">
+        <div class="header-logo"></div>
+    </a>
+    <div class="header-title">登录</div>
+  </div>
+  <div class="main">
+    <form class="form-horizontal public_form loginform" action="{:url('index/index/tologin');}" method="post">
+      <div class="alert alert-danger logintip" role="alert">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-lg" name="phone" id="phone" placeholder="注册时填写的手机号">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control input-lg" name="password" id="password" placeholder="请输入密码">
+      </div>
+      <div class="form-group">
+        <div class="col-xs-8 sms">
+          <input type="text" class="form-control input-lg" name="code" id="code" placeholder="请输入验证码">
+        </div>
+	      <img src="{:captcha_src()}" class="captcha-img"  alt="点击更换" title="点击更换">
+      </div>
+      <div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="auto_login" tabindex="-1" checked=""> 三天内自动登录
+		    </label>
+		    <a class="lost-pw" href="{:url('index/index/retrieve')}" target="_blank" tabindex="-1">忘记密码?</a>
+		  </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-xl btn-block btnSubmit">登录</button>
+      </div>
+      
+    </form>
+  </div>
