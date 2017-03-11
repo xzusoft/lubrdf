@@ -10,17 +10,15 @@
 // +----------------------------------------------------------------------
 
 return [
-    // 生成应用公共文件
-    '__file__' => ['common.php', 'config.php', 'database.php'],
+  
 
     // 定义demo模块的自动生成 （按照实际定义的文件名生成）
-    'base'     => [
+    'api'     => [
         '__file__'   => ['common.php'],
-        '__dir__'    => ['behavior', 'controller', 'model', 'service', 'view'],
+        '__dir__'    => ['controller', 'model', 'service'],
         'controller' => ['Index', 'Public'],
-        'model'      => ['User'],
-        'service'    => ['Login'],
-        'view'       => ['index/index','public/login', 'public/register','public/changepwd'],
+        'model'      => ['Product','Order','User'],
+        'service'    => ['Product','Order','User'],
     ],
     // 其他更多的模块定义
 ];

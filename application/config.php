@@ -102,7 +102,7 @@ return [
     // 域名部署
     'url_domain_deploy'      => false,
     // 域名根，如thinkphp.cn
-    'url_domain_root'        => 'alizhiyou.com',
+    'url_domain_root'        => 'leubao.com',
     // 是否自动转换URL中的控制器和操作名
     'url_convert'            => true,
     // 默认的访问控制器层
@@ -199,8 +199,16 @@ return [
         ],
         'redis'  => [
             // 驱动方式
-            'type'  =>  'redis',
-            'host'  =>  '127.0.0.1',
+            'type'       =>  'redis',
+            'host'       => '127.0.0.1',
+            'port'       => 6379,
+            'password'   => 'nY*Y*E4XE0&Sdehv',//密码
+            'select'     => 12,
+            'timeout'    => 300,
+            'expire'     => 0,
+            'persistent' => false,//是否长连接 false=短连接
+            'prefix'     => 'lubrdf_',// 缓存前缀
+
         ],
         'file'   => [
             'type'  =>  'File',
@@ -208,7 +216,6 @@ return [
             'path'   => CACHE_PATH,
         ],
     ],
-
     // +----------------------------------------------------------------------
     // | 会话设置
     // +----------------------------------------------------------------------

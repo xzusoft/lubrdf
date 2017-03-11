@@ -13,7 +13,7 @@ class Api extends LubRDF{
 		parent::_initialize();
         //验证接口调用权限
         if(!$this->isApi()){
-        	$this->error('error');
+        	return ['status'=>0,'info'=>'参数错误'];
        	}
 	}
 	//验证API访问权限
@@ -24,7 +24,7 @@ class Api extends LubRDF{
 		$strdomain = explode("/",$str);               // 以“/”分开成数组
 		$domain    = $strdomain[0];              //取第一个“/”以前的字符
 		//TODO 验证写死
-		if($domain != 'www.alizhiyou.com'){
+		if($domain != 'www.alizhiyou.com' || $domain != 'new.leubao.com'){
 			return false;
 		}else{
 			return 200;
@@ -39,11 +39,11 @@ class Api extends LubRDF{
 			if(empty($phone)){
 				return ['status'=>0,'info'=>'参数错误'];
 			}
-			$code = session('code');
+			$code = Cache::store('redis')->get('code');
 			if(empty($code)){
 				$code = genRandomString(6,1);
-				//存储验证码
-				session('code',$code);
+				//存储验证码 有效期10分钟
+				$code = Cache::store('redis')->get('code', $code,'600');
 			}
 			//类型
 			switch ($type) {
@@ -73,7 +73,6 @@ class Api extends LubRDF{
 				return $return;
 			}
 			//return ['status'=>1,'info'=>'ok'];
-			
 			$sms = new \lubrdf\common\service\Sms;
 			if($sms->sendMsg($putdata)){
 				return ['status'=>1,'info'=>'ok'];
@@ -88,9 +87,9 @@ class Api extends LubRDF{
 		if(empty($phone)){
 			return ['status'=>0,'info'=>'参数错误'];
 		}
-		$aes = new \lubrdf\common\service\Aes;
+		$lubpass = new \lubrdf\common\service\LubPass;
 		//组织条件
-		$m_phone = $aes->encrypt($phone);
+		$m_phone = $lubpass->authcode($phone,'DECODE');
 		$status = db('user')->where(['phone'=>$m_phone])->find();
 		if($status){
 			return ['status'=>0,'info'=>'手机号已被注册'];
@@ -116,5 +115,14 @@ class Api extends LubRDF{
 		}else{
 			return ['code'=>'0','msg'=>'认证失败'];
 		}
+	}
+	//开发阶段重置缓存
+	function reset_cache(){
+		//删除缓存
+		Cache::store('redis')->rm('sys_config');
+		//生成缓存
+		$config = model('Config')->lists();
+		Cache::store('redis')->set('sys_config', $config);
+		return ['code'=>'1','msg'=>'ok'];
 	}
 }

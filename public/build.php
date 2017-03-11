@@ -11,29 +11,16 @@
 
 return [
     // 生成应用公共文件
-    '__file__' => ['common.php', 'config.php', 'database.php','version.php'],
+    '__file__' => ['common.php', 'config.php', 'database.php','version.php','helper.php','tags.php'],
 
     // 定义demo模块的自动生成 （按照实际定义的文件名生成）
-    'base'     => [
+
+    'api'     => [
         '__file__'   => ['common.php'],
-        '__dir__'    => ['behavior', 'controller', 'model',],
-        'controller' => ['Index', 'Public'],
-        'model'      => ['User'],
-    ],
-    'manage'     => [
-        '__file__'   => ['common.php'],
-        '__dir__'    => ['behavior', 'controller', 'model', 'service', 'view'],
-        'controller' => ['Index', 'Public','Menu','Auth','AuthGroup','Product','Item'],
-        'model'      => ['User','Menu','Auth','Product'],
-        'service'    => ['Login'],
-        'view'       => ['index/index','public/login', 'public/register','public/changepwd','menu/index','auth/index'],
-    ],
-    'crm'     => [
-        '__file__'   => ['common.php'],
-        '__dir__'    => ['behavior', 'controller', 'model', 'view'],
-        'controller' => ['Index', 'Member'],
-        'model'      => ['Member'],
-        'view'       => ['index/index','member/index'],
+        '__dir__'    => ['controller', 'model', 'service'],
+        'controller' => ['Index', 'Trust','Public'],
+        'model'      => ['Product','Order','User'],
+        'service'    => ['Product','Order','User','Trust','Untrust','Interface'],
     ],
     // 其他更多的模块定义
 ];

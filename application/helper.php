@@ -316,6 +316,60 @@ function & load_wechat($type = '') {
     }
     return $wechat[$index];
 }
+//系统读取redis数据库
+/**
+ * lubTicket redis 操作API
+ * @param  string $apiport 要操作的接口
+ * @param  string $key     键名
+ * @param  string $value   键值
+ * @param  string $time    有效时间
+ * @return true|false  
+ */
+function load_redis($apiport,$key,$value = '',$time = ''){
+    $redis = new \Redis();
+    $redis->connect(think\Config::get('REDIS_HOST'),think\Config::get('REDIS_PORT'));
+    //$redis->auth(C('REDIS_AUTH'));
+    $redis->select(think\Config::get('REDIS_DATABASE'));
+    switch ($apiport) {
+        case 'lsize':
+            //判断列表中元素个数
+            $return = $redis->lsize($key);
+            break;
+        case 'rPop':
+            //获取队列中最后一个元素，且移除
+            if((int)$redis->lsize($key) > 0){
+                $return = $redis->rPop($key);
+            }else{
+                $return = false;
+            }
+            break;
+        case 'lpush':
+            //写入带处理队列，若存在则不再写入
+            $return = $redis->lPush($key,$value);
+            break;
+        case 'set':
+            $return = $redis->set($key,$value);
+            break;
+        case 'setex':
+            /**
+             * 设置有效期
+             */
+            $return = $redis->setex($key, $time, $value);
+            break;
+        case 'get':
+            $return = $redis->get($key);
+            break;
+        case 'lrange':
+            //返回list 中的元素 返回名称为key的list中start至end之间的元素（end为 -1 ，返回所有） value 为开始位置 $time 为结束位置
+            $return = $redis->lrange($key,$value,$time);
+            break;
+        case 'delete':
+            //删除指定key
+            $return = $redis->delete($key);
+            break;
+    }
+    return $return;
+}
 /**
  * 模拟请求
  * @param  string $url  访问地址

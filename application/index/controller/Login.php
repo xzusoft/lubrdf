@@ -8,6 +8,7 @@
 // +----------------------------------------------------------------------
 namespace lubrdf\index\controller;
 use lubrdf\common\controller\Item;
+use \think\Cache;
 class Login extends Item{
 	public function _initialize() {
 		parent::_initialize();
@@ -16,9 +17,9 @@ class Login extends Item{
 	function register($name = '', $phone = '', $password = '', $verify = ''){
 		if(IS_POST){
 			//验证验证码
-			$verify = session('code');
+			$verify = load_redis('get',$phone.'code');
 			if($verify == $verify){
-				session('code',null);
+				load_redis('delete',$phone.'code');
 			}else{
 				return $this->error("验证码错误...");
 			}

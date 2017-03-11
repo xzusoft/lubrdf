@@ -13,6 +13,14 @@ use \think\Request;
 class LubRDF extends \think\Controller {
 
 	public function _initialize() {
+		/**
+         * 判断缓存是否支持
+         * @var [type]
+         */
+        if (class_exists('Redis') == false) {
+            $this->error('您的环境不支持Redis,系统无法正常运行！');
+            return false;
+        }
 		/* 读取数据库中的配置 */
 		$this->config = Cache::store('redis')->get('sys_config');
 		if (!$this->config) {

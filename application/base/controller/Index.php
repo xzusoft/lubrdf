@@ -12,6 +12,8 @@ class Index
    	function login($phone = '',$password = ''){
 
    	}
-   	//首次绑定
-   	//
+   	//读取产品列表
+    function get_product(){
+      
+    }
 }

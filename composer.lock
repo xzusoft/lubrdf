@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c7a3ab87b20ec6c001bd376be5c4d736",
-    "content-hash": "b4fcab387242360bf8639ad279717c11",
+    "content-hash": "45a423cf7ae9fcb47219289b96c40f17",
     "packages": [
         {
             "name": "5ini99/think-auth",
@@ -42,7 +41,108 @@
             ],
             "description": "auth package for thinkphp5",
             "homepage": "https://github.com/5ini99/think-auth",
-            "time": "2016-11-02 06:26:09"
+            "time": "2016-11-02T06:26:09+00:00"
+        },
+        {
+            "name": "ircmaxell/random-lib",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/RandomLib.git",
+                "reference": "e9e0204f40e49fa4419946c677eccd3fa25b8cf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/ircmaxell/RandomLib/e9e0204f40e49fa4419946c677eccd3fa25b8cf4.zip",
+                "reference": "e9e0204f40e49fa4419946c677eccd3fa25b8cf4",
+                "shasum": ""
+            },
+            "require": {
+                "ircmaxell/security-lib": "^1.1",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.11",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "RandomLib": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@ircmaxell.com",
+                    "homepage": "http://blog.ircmaxell.com"
+                }
+            ],
+            "description": "A Library For Generating Secure Random Numbers",
+            "homepage": "https://github.com/ircmaxell/RandomLib",
+            "keywords": [
+                "cryptography",
+                "random",
+                "random-numbers",
+                "random-strings"
+            ],
+            "time": "2016-09-07T15:52:06+00:00"
+        },
+        {
+            "name": "ircmaxell/security-lib",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/SecurityLib.git",
+                "reference": "f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/ircmaxell/SecurityLib/f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5.zip",
+                "reference": "f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.1.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "SecurityLib": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@ircmaxell.com",
+                    "homepage": "http://blog.ircmaxell.com"
+                }
+            ],
+            "description": "A Base Security Library",
+            "homepage": "https://github.com/ircmaxell/SecurityLib",
+            "time": "2015-03-20T14:31:23+00:00"
         },
         {
             "name": "qiniu/php-sdk",
@@ -93,7 +193,7 @@
                 "sdk",
                 "storage"
             ],
-            "time": "2016-11-18 02:57:31"
+            "time": "2016-11-18T02:57:31+00:00"
         },
         {
             "name": "topthink/framework",
@@ -101,12 +201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/framework.git",
-                "reference": "465b2326a35526692e5c8051db026482571ec98c"
+                "reference": "af635db08f6be71de716c5ed2044e1feefc747ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/framework/zipball/465b2326a35526692e5c8051db026482571ec98c",
-                "reference": "465b2326a35526692e5c8051db026482571ec98c",
+                "url": "https://files.phpcomposer.com/files/top-think/framework/af635db08f6be71de716c5ed2044e1feefc747ea.zip",
+                "reference": "af635db08f6be71de716c5ed2044e1feefc747ea",
                 "shasum": ""
             },
             "require": {
@@ -144,7 +244,7 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2016-12-29 10:07:29"
+            "time": "2017-03-10T14:11:02+00:00"
         },
         {
             "name": "topthink/think-captcha",
@@ -180,20 +280,20 @@
                 }
             ],
             "description": "captcha package for thinkphp5",
-            "time": "2016-07-06 01:47:11"
+            "time": "2016-07-06T01:47:11+00:00"
         },
         {
             "name": "topthink/think-installer",
-            "version": "v1.0.5",
+            "version": "v1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-installer.git",
-                "reference": "6fbab3ed12ce31a455c0f62aac25afe39ec1499a"
+                "reference": "4c6e1ebecd1afce3f4ccc47e147d61bbe1bf641d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-installer/zipball/6fbab3ed12ce31a455c0f62aac25afe39ec1499a",
-                "reference": "6fbab3ed12ce31a455c0f62aac25afe39ec1499a",
+                "url": "https://files.phpcomposer.com/files/top-think/think-installer/4c6e1ebecd1afce3f4ccc47e147d61bbe1bf641d.zip",
+                "reference": "4c6e1ebecd1afce3f4ccc47e147d61bbe1bf641d",
                 "shasum": ""
             },
             "require": {
@@ -221,20 +321,20 @@
                     "email": "448901948@qq.com"
                 }
             ],
-            "time": "2016-07-29 10:04:04"
+            "time": "2016-12-01T09:08:45+00:00"
         },
         {
             "name": "zoujingli/wechat-php-sdk",
-            "version": "v1.3.5",
+            "version": "v1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zoujingli/wechat-php-sdk.git",
-                "reference": "77f5b4176cd055993f992616f7b00353302760dd"
+                "reference": "12759d48867aab14e6b66be81a5b5afe223a0476"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zoujingli/wechat-php-sdk/zipball/77f5b4176cd055993f992616f7b00353302760dd",
-                "reference": "77f5b4176cd055993f992616f7b00353302760dd",
+                "url": "https://files.phpcomposer.com/files/zoujingli/wechat-php-sdk/12759d48867aab14e6b66be81a5b5afe223a0476.zip",
+                "reference": "12759d48867aab14e6b66be81a5b5afe223a0476",
                 "shasum": ""
             },
             "require": {
@@ -255,7 +355,7 @@
             "keywords": [
                 "wechat-php-sdk"
             ],
-            "time": "2016-12-16 03:08:39"
+            "time": "2017-02-14T08:30:06+00:00"
         }
     ],
     "packages-dev": [],

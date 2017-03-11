@@ -21,7 +21,8 @@
         "topthink/think-captcha": "^1.0",
         "5ini99/think-auth": "^1.0",
         "zoujingli/wechat-php-sdk": "^1.3",
-        "qiniu/php-sdk": "^7.1"
+        "qiniu/php-sdk": "^7.1",
+        "ircmaxell/random-lib": "^1.2"
     },
     "extra": {
         "think-path": "thinkphp"

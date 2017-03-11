@@ -41,4 +41,7 @@ return [
 	'manage/index/degree' 	=> 'degree',//商户跳转页面
 	'manage/index/index'	=> 'manage/index'
 	//业务模块
+	//API 微信小程序
+	//API 微信公众号
+	'lists' 				=>	['api/index/lists',['method' => 'get']]
 ];

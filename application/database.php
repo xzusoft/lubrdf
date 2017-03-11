@@ -13,13 +13,13 @@ return [
     // 数据库类型
     'type'           => 'mysql',
     // 服务器地址
-    'hostname'       => 'localhost',
+    'hostname'       => 'rdset30picxyk8ll6uh8i.mysql.rds.aliyuncs.com',
     // 数据库名
-    'database'       => 'tp5',
+    'database'       => 'new',
     // 用户名
-    'username'       => 'root',
+    'username'       => 'yx_dhpticket',
     // 密码
-    'password'       => 'youban.ren',
+    'password'       => 'chengde360',
     // 端口
     'hostport'       => '3306',
     // 连接dsn

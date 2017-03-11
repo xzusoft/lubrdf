@@ -23,8 +23,8 @@ class User extends Model
     }
 	function login($phone = '', $password = '', $type = '1')
 	{	
-		$aes = new \lubrdf\common\service\Aes;
-		$phone = $aes->encrypt($phone);
+		$lubpass = new \lubrdf\common\service\LubPass;
+		$phone = $lubpass->authcode($phone,'ENCODE');
 		$uinfo = User::get(['phone'=>$phone,'status'=>['in','1']])->toArray();
 		/*
 		if (\think\Validate::is($username,'email')) {
@@ -83,11 +83,11 @@ class User extends Model
 			'last_login_ip'   => get_client_ip(1),
 		);
 		$this->where(array('id'=>$uinfo['id']))->update($data);
-		$aes = new \lubrdf\common\service\Aes;
+		$lubpass = new \lubrdf\common\service\LubPass;
 		/* 记录登录SESSION和COOKIES */
 		$user = array(
 			'uid'             => $uinfo['id'],
-			'phone'			  => $aes->decrypt($uinfo['phone']),
+			'phone'			  => $lubpass->authcode($uinfo['phone'],'DECODE'),
 			'nickname'        => $uinfo['nickname'],
 			'last_login_time' => $last_login_time,
 			'type'			  => $uinfo['type'],
@@ -103,12 +103,12 @@ class User extends Model
 	 */
 	function register($name,$phone,$password){
 		$verify = genRandomString();
-		$aes = new \lubrdf\common\service\Aes;
+		$lubpass = new \lubrdf\common\service\LubPass;
 		//构造写入数组
 		$this->data = array(
 			'username'  => $verify,
 			'nickname'  => $name,
-			'phone'		=> $aes->encrypt($phone),
+			'phone'		=> $lubpass->authcode($phone,'ENCODE'),
 			'email'		=> $phone.'@alizhiyou.com',
 			'password'	=> hashPassword($password,$verify),
 			'verify'	=> $verify,
@@ -133,8 +133,8 @@ class User extends Model
 		}
 		if($type == '2'){
 			//查询用户信息
-			$aes = new \lubrdf\common\service\Aes;
-			$phone = $aes->encrypt($phone);			
+			$lubpass = new \lubrdf\common\service\LubPass;
+			$phone = $lubpass->authcode($phone,'ENCODE');			
 			$map = array('phone'=>$phone);
 		}
 		$verify = genRandomString();
