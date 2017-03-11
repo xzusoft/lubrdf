@@ -44,7 +44,6 @@ class Api extends LubRDF{
 			Cache::store('redis')->set($phone.'code',$code);
 			//存储验证码 有效期10分钟
 			load_redis('setex',$phone.'code',$code,'600');
-
 			//类型
 			switch ($type) {
 				case '1':

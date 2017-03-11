@@ -5,5 +5,5 @@ use think\Model;
 
 class Product extends Model
 {
-
+	
 }

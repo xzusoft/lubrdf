@@ -44,4 +44,15 @@ return [
 	//API 微信小程序
 	//API 微信公众号
 	'lists' 				=>	['api/index/lists',['method' => 'get']]
+
+	/*untrust 下API 访问*/
+	'[v1]' => [
+        'user' => ['demo/User/init',], //用户模块接口
+    ],
+    //认证
+    '[oauth]' => [
+        'accessToken' => ['demo/Auth/accessToken',],//获取令牌
+        'refreshToken' => ['demo/Auth/refreshToken',],//刷新令牌
+        'getServerTime' => ['demo/Auth/getServerTime',],//获取服务器时间戳
+    ],
 ];

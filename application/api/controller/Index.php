@@ -13,6 +13,7 @@ class Index extends Api
     }
     //产品列表
     function lists(){
-
+    	
     }
+    
 }

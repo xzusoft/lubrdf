@@ -1,5 +1,5 @@
 <?php
-namespace app\api\service;
+namespace lubrdf\api\service;
 
 class Interface
 {
